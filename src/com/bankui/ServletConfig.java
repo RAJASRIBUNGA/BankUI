@@ -8,8 +8,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = {"com.bankui.controller"
-		, "com.bankui.db", "com.bankui.model","com.bankui.service"})
+@ComponentScan(basePackages = {"com.bankui.controller","com.bankui.beans"})
 public class ServletConfig implements WebMvcConfigurer{
 
 	@Bean
