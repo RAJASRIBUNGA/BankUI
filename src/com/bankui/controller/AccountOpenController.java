@@ -23,7 +23,10 @@ public class AccountOpenController {
 	@RequestMapping("/create-account")
 	public String showLoginScreen(@ModelAttribute Customer customer) {
 		//Call the API and pass this customer object 
-		System.out.println(customer);
-		return "account_open";
+		String url = "http://localhost:8181/customer"; 
+		RestTemplate restTemplate = new RestTemplate();
+		Customer c = restTemplate.postForObject(url, customer, Customer.class);
+		System.out.println(c);
+		return "login";
 	}
 }
